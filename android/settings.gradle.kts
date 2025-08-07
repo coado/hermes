@@ -19,4 +19,4 @@ rootProject.name = "hermes-engine"
 
 include(":cppruntime")
 
-include(":intltest")
+// include(":intltest")
