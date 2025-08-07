@@ -7,7 +7,6 @@ jobs:
     runs-on: 8-core-ubuntu
     env:
       HERMES_WS_DIR: /home/runner/work/hermes/hermes
-      CMAKE_BUILD_TYPE: Release
     container:
       image: reactnativecommunity/react-native-android:latest
       env:
@@ -22,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Hermes Compiler
         run: |-
-          cmake -S . -B build
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           # Build the Hermes compiler so that the cross compiler build can
           # access it to build the VM
           cmake --build ./build --target hermesc -j 4
