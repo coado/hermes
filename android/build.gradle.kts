@@ -99,6 +99,7 @@ val configureBuildForHermes by
               "-B",
               hermesBuildDir.toString(),
               "-DJSI_DIR=" + jsiDir.absolutePath,
+              "-DCMAKE_BUILD_TYPE=Release"
           )
       if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         cmakeCommandLine = cmakeCommandLine + "-GNMake Makefiles"
@@ -200,7 +201,7 @@ android {
             "-DANDROID_STL=c++_shared",
             "-DANDROID_PIE=True",
             "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON",
-            "-DIMPORT_HERMESC=${File(hermesBuildDir, "ImportHermesc.cmake").toString()}",
+            "-DIMPORT_HOST_COMPILERS=${File(hermesBuildDir, "ImportHostCompilers.cmake").toString()}",
             "-DJSI_DIR=${jsiDir}",
             "-DHERMES_BUILD_SHARED_JSI=True",
             // "-DHERMES_RELEASE_VERSION=for RN ${version}",
