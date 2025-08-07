@@ -99,7 +99,7 @@ val configureBuildForHermes by
               "-B",
               hermesBuildDir.toString(),
               "-DJSI_DIR=" + jsiDir.absolutePath,
-              "-DCMAKE_BUILD_TYPE=Release"
+              "-DCMAKE_BUILD_TYPE=Debug"
           )
       if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         cmakeCommandLine = cmakeCommandLine + "-GNMake Makefiles"
@@ -237,7 +237,7 @@ android {
           // Therefore we're passing as build type Release, to provide a faster build.
           // This has the (unlucky) side effect of letting AGP call the build
           // tasks `configureCMakeRelease` while is actually building the debug flavor.
-          arguments("-DCMAKE_BUILD_TYPE=Release")
+          arguments("-DCMAKE_BUILD_TYPE=Release", "-DHERMES_ENABLE_DEBUGGER=1")
         }
       }
     }
@@ -245,9 +245,7 @@ android {
       externalNativeBuild {
         cmake {
           arguments(
-              "-DCMAKE_BUILD_TYPE=MinSizeRel",
-              // For release builds, we don't want to enable the Hermes Debugger.
-              "-DHERMES_ENABLE_DEBUGGER=False")
+              "-DCMAKE_BUILD_TYPE=MinSizeRel")
         }
       }
     }

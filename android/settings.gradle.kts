@@ -17,8 +17,6 @@ pluginManagement {
 
 rootProject.name = "hermes-engine"
 
-include(":hermes")
-
 include(":cppruntime")
 
 include(":intltest")

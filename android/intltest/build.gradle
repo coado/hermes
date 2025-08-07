@@ -57,7 +57,7 @@ task prepareTests() {
 
 // TODO: Figure out how to deduplicate this file and intl/build.gradle
 android {
-  namespace "com.facebook.hermes.intltest"
+  namespace = "com.facebook.hermes.intltest"
   compileSdk = hermesUtils.compileSdk
   ndkVersion = hermesUtils.ndkVersion
 
@@ -77,7 +77,7 @@ android {
         arguments "-DIMPORT_HERMESC=${hermesUtils.hermesC}"
         arguments "-DHERMES_SLOW_DEBUG=False"
         arguments "-DHERMES_ENABLE_INTL=True"
-        targets "jsijni", "jsijniepi", "libhermes"
+        targets "jsijni", "jsijniepi", "hermesvm"
       }
     }
     ndk {
