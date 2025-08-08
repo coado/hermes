@@ -96,7 +96,6 @@ function configure_apple_framework {
       -DHERMES_BUILD_SHARED_JSI:BOOLEAN=false \
       -DCMAKE_CXX_FLAGS:STRING="-gdwarf" \
       -DCMAKE_C_FLAGS:STRING="-gdwarf" \
-      # -DIMPORT_HERMESC:PATH="$IMPORT_HERMESC_PATH" \
       -DIMPORT_HOST_COMPILERS:PATH="$IMPORT_HERMESC_PATH" \
       -DJSI_DIR="$JSI_PATH" \
       -DCMAKE_BUILD_TYPE="$cmake_build_type" \
