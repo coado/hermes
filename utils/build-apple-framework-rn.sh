@@ -104,7 +104,7 @@ function configure_apple_framework {
 }
 
 function generate_dSYM {
-    TARGET_PLATFORM = "$1"
+    TARGET_PLATFORM="$1"
 
     DSYM_PATH="$PWD/build_$TARGET_PLATFORM/lib/hermesvm.framework.dSYM"
     xcrun dsymutil "$PWD/build_$TARGET_PLATFORM/lib/hermesvm.framework/hermesvm" --out "$DSYM_PATH"
