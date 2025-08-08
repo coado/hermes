@@ -7,6 +7,11 @@ on:
       - main
 
 jobs:
-  build_android:
-    uses: ./.github/workflows/build-android.yml
-    secrets: inherit
+  build_hermesc_apple:
+    uses: ./.github/workflows/build-hermesc-apple.yml
+  build_apple_slices_hermes:
+    uses: ./.github/workflows/build-apple-slices-hermes.yml
+    needs: build_hermesc_apple
+  # build_android:
+  #   uses: ./.github/workflows/build-android.yml
+  #   secrets: inherit
