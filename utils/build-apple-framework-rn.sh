@@ -214,5 +214,3 @@ function create_universal_framework {
 
   popd > /dev/null || exit 1
 }
-
-build_host_hermesc_if_needed
