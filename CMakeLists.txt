@@ -224,8 +224,8 @@ set(HERMES_USE_STATIC_ICU OFF CACHE BOOL
 set(HERMES_UNICODE_LITE OFF CACHE BOOL
   "Enable to use internal no-op unicode functionality instead of relying on underlying system libraries")
 
-# set(HERMES_CHECK_NATIVE_STACK ON CACHE BOOL
-#   "Check the native stack for stack overflow")
+set(HERMES_CHECK_NATIVE_STACK ON CACHE BOOL
+  "Check the native stack for stack overflow")
 
 set(HERMES_ENABLE_DEBUGGER OFF CACHE BOOL
   "Build with debugger support")
